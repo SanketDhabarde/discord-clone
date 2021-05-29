@@ -1,6 +1,74 @@
 .sidebar{
     flex: 0.2;
-    height: 95vh;
-    padding: 1rem;
+    height: 100vh;
     background-color: #2f3136;
+    object-fit: contain;
 }
+
+.sidebar__header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    align-items: center;
+    padding:0.7rem 1rem;
+}
+
+.sidebar__channels{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 80vh;
+    padding: 1rem;
+    color: gray;
+}
+
+.sidebar__channels::-webkit-scrollbar{
+    display: none;
+}
+
+.sidebar__channels > p:hover{
+    color: white;
+    cursor: pointer;
+}
+
+.sidebar__channel{
+    display: flex;
+    align-items: center;
+    padding: 0.2rem;
+}
+
+.sidebar__channelSymbol{
+    font-size: 23px;
+    font-weight: 600;
+    margin-right: 7px;
+}
+
+.sidebar__footer{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 18%;
+    padding: 0.5rem;
+    align-items: center;
+    bottom: 0;
+    background-color: #202225;
+}
+
+.sidebar__footerLeft{
+    display: flex;
+    align-items: center;
+}
+
+.sidebar__footerLeft > h5{
+    margin-left: 5px;
+}
+
+.MuiSvgIcon-root{
+    color: grey;
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+.MuiSvgIcon-root:hover{
+    color: white;
+}
+
