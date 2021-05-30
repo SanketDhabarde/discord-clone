@@ -1,0 +1,62 @@
+.signin{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    width: 100%;
+    background-image: url("https://www.teahub.io/photos/full/100-1002471_discord-backgrounds.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.signin__form{
+    background-color: #36393f;
+    color: #72767d;
+    width: 480px;
+    padding: 1.5rem;
+    border-radius: 5px;
+}
+
+.signin__form > form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+h2{
+    color: white;
+}
+
+.signin__inputField{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.signin__inputField > input{
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 0.5px solid black;
+    padding: 0.5rem;
+    margin-top: 5px;
+    border-radius: 3px;
+    color: white;
+}
+
+.signin__form button{
+    background-color: #5865f2;
+    padding: 0.5rem;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    height: 44px;
+    font-size: 1rem;
+}
+
+.signin__form p{
+    margin-top: 1rem;
+}
+
+.signin__form a{
+    text-decoration: none;
+    color: #5865f2;
+}
