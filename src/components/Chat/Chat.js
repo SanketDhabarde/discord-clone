@@ -1,13 +1,27 @@
 import { Avatar } from '@material-ui/core';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Chat.css';
 import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
+import { useParams } from 'react-router';
+import db from '../../firebase';
 
 function Chat() {
+    const { serverId, channelId } = useParams();
+    const [channelName, setChannelName]= useState("");
+
+    // retrive channelName from db
+    useEffect(() => {
+        if(channelId){
+            db.collection("servers").doc(serverId).collection("channels").doc(channelId).onSnapshot(snap => {
+                setChannelName(snap?.data().channelName);
+            })
+        }
+    }, [channelId, serverId]);
+
     return (
         <div className="chat">
             <div className="chat__header">
-                <h4><span className="chat__headerSymbol">#</span> Channel Name</h4>
+                <h4><span className="chat__headerSymbol">#</span> {channelName ? channelName : "No Channel Selected"}</h4>
             </div>
             <div className="chat__container">
                 <div className="chat__chat">

@@ -9,6 +9,7 @@ import SignUp from './components/SignUp/SignUp';
 import SignIn from './components/SignIn/SignIn';
 import Modal from './components/Modal/Modal';
 import db from './firebase';
+import { BrowserRouter, Route} from 'react-router-dom';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -25,27 +26,36 @@ function App() {
     })
   }, []);
 
-  console.log(servers)
-
   return (
     <div className="app">
       {user ? (
-          // <SignUp/>
-          <SignIn/>
+        <BrowserRouter>
+            <SignIn/>
+        </BrowserRouter>
       ): (
-        <>
+        <BrowserRouter>
         <div className="app__servers">
           {servers?.map(server => (
-            <Server key={server.id} server={server.data}/>
+            <Server key={server.id} server={server.data} id={server.id}/>
           ))}
           <IconButton className="app__serverAdd" onClick={() => setModal(true)}>
               <AddIcon/>
           </IconButton>
         </div>
-        <Sidebar/>
-        <Chat/>
+        <Route path="/" exact>
+          <Sidebar/>
+          <Chat/>
+        </Route>
+        <Route path="/server/:serverId" exact>
+          <Sidebar/>
+          <Chat/>
+        </Route>
+        <Route path="/server/:serverId/channel/:channelId">
+          <Sidebar/>
+          <Chat/>
+        </Route>
         {modal && <Modal setModal={setModal} server/>}
-        </>
+        </BrowserRouter>
       )}
       
     </div>

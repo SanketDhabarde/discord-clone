@@ -25,7 +25,7 @@
     display: none;
 }
 
-.sidebar__channels > p:hover{
+.sidebar__channels > a:hover{
     color: white;
     cursor: pointer;
 }
@@ -36,6 +36,16 @@
     padding: 0.2rem;
 }
 
+.sidebar__channels > a{
+    text-decoration: none;
+    color: gray;
+}
+
+.activeChannel > p{
+    color: white;
+    background-color: #36393f;
+    border-radius: 4px;
+}
 .sidebar__channelSymbol{
     font-size: 23px;
     font-weight: 600;
