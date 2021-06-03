@@ -1,17 +1,20 @@
 import { Avatar, IconButton } from '@material-ui/core';
 import { Add } from '@material-ui/icons';
-import React from 'react';
+import React, { useState } from 'react';
 import './Sidebar.css';
 import MicIcon from '@material-ui/icons/Mic';
 import HeadsetMicIcon from '@material-ui/icons/HeadsetMic';
 import SettingsIcon from '@material-ui/icons/Settings';
+import Modal from '../Modal/Modal';
 
 function Sidebar() {
+    const [modal, setModal] = useState(false);
+
     return (
         <div className="sidebar">
             <div className="sidebar__header">
                 <h4>#ServerName</h4>
-                <IconButton>
+                <IconButton onClick={() => setModal(true)}>
                     <Add style={{color: 'white'}}/>
                 </IconButton> 
             </div>
@@ -31,6 +34,7 @@ function Sidebar() {
                     <SettingsIcon/>
                 </div>
             </div>
+            {modal && <Modal setModal={setModal} channel/>}
         </div>
     )
 }

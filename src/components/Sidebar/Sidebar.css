@@ -62,13 +62,5 @@
     margin-left: 5px;
 }
 
-.MuiSvgIcon-root{
-    color: grey;
-    margin-right: 4px;
-    cursor: pointer;
-}
 
-.MuiSvgIcon-root:hover{
-    color: white;
-}
 

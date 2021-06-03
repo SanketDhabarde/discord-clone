@@ -18,7 +18,7 @@ function SignIn() {
                     </div>
                     <button type="submit">Login</button>
                 </form>
-                <p>Need an Account? <a href="#">Register</a></p>
+                <p>Need an Account? <a href="www.wikipedia.com">Register</a></p>
             </div>
         </div>
     )

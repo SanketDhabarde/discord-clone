@@ -1,0 +1,86 @@
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal__createServer{
+    display: flex;
+    flex-direction: column;
+    margin: 90px auto;
+    background-color:white;
+    color: black;
+    max-width: 440px;
+    border-radius: 5px;
+}
+.modal__header{
+    text-align: center;
+    padding: 1rem;
+}
+.modal__header > h2{
+    color: black; 
+    margin-bottom: 1rem;  
+}
+
+.modal__header label > input{
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.modal__header label{
+    display: block;
+    margin: 0 auto;
+    width: 70px;
+    height: 70px;
+    text-align: end;
+    cursor: pointer;
+    border: 2px dashed black;
+    border-radius: 50px;
+}
+
+.modal__create{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal__create > input{
+    margin-top: 6px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 10px;
+    color: #2e3338;
+}
+
+.modal__create label{
+    color: #6a7480;
+}
+
+.modal__footer{
+    background-color: #f6f6f7;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.modal__createButton{
+    background-color: #5865f2;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+}
+
+.modal__backButton{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}

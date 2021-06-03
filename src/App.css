@@ -10,3 +10,13 @@
     background-color: #202225;
     padding: 1rem 0.3rem;
 }
+
+.app__serverAdd{
+    background-color: #36393f !important;
+    color: green !important;
+}
+
+.app__serverAdd:hover{
+    background-color: rgb(13, 148, 13) !important;
+    color: white !important;
+}
