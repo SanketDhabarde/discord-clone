@@ -6,15 +6,31 @@ import MicIcon from "@material-ui/icons/Mic";
 import HeadsetMicIcon from "@material-ui/icons/HeadsetMic";
 import SettingsIcon from "@material-ui/icons/Settings";
 import Modal from "../Modal/Modal";
-import { useParams } from "react-router";
-import db from "../../firebase";
+import { useHistory, useParams } from "react-router";
+import db, { auth } from "../../firebase";
 import { NavLink } from "react-router-dom";
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
-function Sidebar() {
+function Sidebar({user, setUser}) {
   const [modal, setModal] = useState(false);
   const [serverName, setServerName] = useState("");
   const [channels, setChannels] = useState([]);
   const { serverId } = useParams();
+  const history= useHistory();
+
+  // check for currently logged in user
+  useEffect(() => {
+    const unsub = auth.onAuthStateChanged(authUser => {
+      if(authUser){
+        setUser(authUser);
+      }else{
+        setUser(null);
+        history.push("/");
+      }
+    });
+
+    return () => unsub();
+  }, [user, setUser, history])
 
   // to retrive the server from db
   useEffect(() => {
@@ -45,7 +61,10 @@ function Sidebar() {
       <div className="sidebar__header">
         <h4>#{serverName? serverName : "No server selected"}</h4>
         <IconButton onClick={() => setModal(true)}>
-          <Add style={{ color: "white" }} />
+          <Add style={{ color: "white"}}/>
+        </IconButton>
+        <IconButton onClick={() => auth.signOut()}>
+          <ExitToAppIcon style={{ color: "white" }} className="logout"/>
         </IconButton>
       </div>
       <div className="sidebar__channels">
@@ -60,8 +79,8 @@ function Sidebar() {
       </div>
       <div className="sidebar__footer">
         <div className="sidebar__footerLeft">
-          <Avatar />
-          <h5>Username</h5>
+          <Avatar alt={`${user?.displayName}`} src={`${user?.photoURL}`} />
+          <h5>{user?.displayName}</h5>
         </div>
         <div className="sidebar__footerRight">
           <MicIcon />

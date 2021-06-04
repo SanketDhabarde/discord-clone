@@ -30,7 +30,7 @@
 
 .chat__chat{
     display: flex;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     padding: 1rem;
 }
 .chat__chat:hover{

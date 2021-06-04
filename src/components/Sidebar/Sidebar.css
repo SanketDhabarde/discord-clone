@@ -41,6 +41,10 @@
     color: gray;
 }
 
+.logout:hover{
+    color: green !important;
+}
+
 .activeChannel > p{
     color: white;
     background-color: #36393f;

@@ -28,9 +28,10 @@ function App() {
 
   return (
     <div className="app">
-      {user ? (
+      {!user ? (
         <BrowserRouter>
-            <SignIn/>
+          <Route path="/" exact><SignIn  user={user} setUser={setUser}/></Route>
+          <Route path="/signup"><SignUp user={user} setUser={setUser}/></Route>
         </BrowserRouter>
       ): (
         <BrowserRouter>
@@ -43,16 +44,16 @@ function App() {
           </IconButton>
         </div>
         <Route path="/" exact>
-          <Sidebar/>
-          <Chat/>
+          <Sidebar user={user} setUser={setUser}/>
+          <Chat user={user}/>
         </Route>
         <Route path="/server/:serverId" exact>
-          <Sidebar/>
-          <Chat/>
+          <Sidebar user={user} setUser={setUser}/>
+          <Chat user={user}/>
         </Route>
         <Route path="/server/:serverId/channel/:channelId">
-          <Sidebar/>
-          <Chat/>
+          <Sidebar user={user} setUser={setUser}/>
+          <Chat user={user}/>
         </Route>
         {modal && <Modal setModal={setModal} server/>}
         </BrowserRouter>
