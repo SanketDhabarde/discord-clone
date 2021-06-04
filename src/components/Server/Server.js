@@ -6,7 +6,8 @@ import './Server.css';
 function Server({server, id}) {
   return (
     <div className="server">
-      <NavLink to={`/server/${id}`}>
+      <NavLink to={`/server/${id}`} activeClassName="server__active">
+        <div className="server__point"></div>
         <Avatar src={server.serverImage} />
       </NavLink>
     </div>

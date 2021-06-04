@@ -2,6 +2,9 @@ import { Avatar } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import "./Chat.css";
 import EmojiEmotionsIcon from "@material-ui/icons/EmojiEmotions";
+import GifIcon from '@material-ui/icons/Gif';
+import CardGiftcardIcon from '@material-ui/icons/CardGiftcard';
+import AddCircleOutlinedIcon from '@material-ui/icons/AddCircleOutlined';
 import { useParams } from "react-router";
 import db from "../../firebase";
 import firebase from "firebase/app";
@@ -77,14 +80,17 @@ function Chat({ user }) {
       </div>
       <div className="chat__footer">
         <div className="chat__form">
+          <AddCircleOutlinedIcon/>
           <form onSubmit={sendMessageHandler}>
             <input
               type="text"
-              placeholder="Meassage  #Channel name"
+              placeholder=" Meassage  #Channel name"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
           </form>
+          <CardGiftcardIcon style={{marginRight: '0.5rem'}} />
+          <GifIcon style={{marginRight: '0.5rem'}} />
           <EmojiEmotionsIcon />
         </div>
       </div>

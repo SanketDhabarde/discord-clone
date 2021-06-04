@@ -2,3 +2,27 @@
     margin-bottom: 1rem;
     cursor: pointer;
 }
+
+.server > a{
+    display: flex;
+    align-items: center;
+}
+
+.server__point{
+    width: 5px;
+    height: 11px;
+    background-color: #b9bbbe;
+    margin-right: 6px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.server__active .server__point{
+    width: 5px;
+    height: 35px;
+    background-color: #b9bbbe;
+    margin-right: 6px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: 200ms ease-in-out;
+}

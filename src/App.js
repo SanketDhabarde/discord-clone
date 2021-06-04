@@ -40,7 +40,7 @@ function App() {
             <Server key={server.id} server={server.data} id={server.id}/>
           ))}
           <IconButton className="app__serverAdd" onClick={() => setModal(true)}>
-              <AddIcon/>
+              <AddIcon style={{color: 'green'}}/>
           </IconButton>
         </div>
         <Route path="/" exact>

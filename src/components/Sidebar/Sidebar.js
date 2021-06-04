@@ -60,12 +60,14 @@ function Sidebar({user, setUser}) {
     <div className="sidebar">
       <div className="sidebar__header">
         <h4>#{serverName? serverName : "No server selected"}</h4>
-        <IconButton onClick={() => setModal(true)}>
-          <Add style={{ color: "white"}}/>
-        </IconButton>
-        <IconButton onClick={() => auth.signOut()}>
-          <ExitToAppIcon style={{ color: "white" }} className="logout"/>
-        </IconButton>
+        <div style={{display: "flex"}}>
+          <IconButton onClick={() => setModal(true)}>
+            <Add style={{ color: "white"}} className="logout"/>
+          </IconButton>
+          <IconButton onClick={() => auth.signOut()}>
+            <ExitToAppIcon style={{ color: "white" }} className="logout"/>
+          </IconButton>
+        </div>
       </div>
       <div className="sidebar__channels">
         {channels?.map((channel) => (
@@ -83,8 +85,8 @@ function Sidebar({user, setUser}) {
           <h5>{user?.displayName}</h5>
         </div>
         <div className="sidebar__footerRight">
-          <MicIcon />
-          <HeadsetMicIcon />
+          <MicIcon style={{marginRight: '0.5rem'}} />
+          <HeadsetMicIcon style={{marginRight: '0.5rem'}}  />
           <SettingsIcon />
         </div>
       </div>
